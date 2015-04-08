@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<script src="jquery-2.1.3.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function tab1(){
+        document.getElementById('tabText').innerHTML = "This is tab 1";
+        document.getElementById('tab1Image').src = "images/tab1Opened.png";
+        document.getElementById('tab2Image').src = "images/tab2Closed.png";
+        document.getElementById('tab3Image').src = "images/tab3Closed.png";
+    }
+    function tab2(){
+        document.getElementById('tabText').innerHTML = "This is tab 2";
+        document.getElementById('tab1Image').src = "images/tab1Closed.png";
+        document.getElementById('tab2Image').src = "images/tab2Opened.png";
+        document.getElementById('tab3Image').src = "images/tab3Closed.png";
+    }
+    function tab3(){
+        document.getElementById('tabText').innerHTML = "This is tab 3";
+        document.getElementById('tab1Image').src = "images/tab1Closed.png";
+        document.getElementById('tab2Image').src = "images/tab2Closed.png";
+        document.getElementById('tab3Image').src = "images/tab3Opened.png";
+    }
+</script>
+
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Lab 1 Perebykivskiy 343</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <script src="jquery-2.1.3.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="main" style="height: 100%">
+        <div id="header">
+            <div id="block" style="position: relative"><img src="images/block.jpg" height="50" width="55"></div>
+            <table border="1" bgcolor="#f0f8ff" width="100%">
+                <tr>
+                    <td width="80%" id="advBanner"><img src="images/2.jpg" width="100%" height="100"></td>
+                    <td width="20%" id="search">
+                        <table border="0" class="search" bgcolor="#faebd7" width="100%">
+                            <tr>
+                                <td><input type="text" placeholder="Search text"></td>
+                                <td align="right"><input type="button" class="btn"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="workspace" style="background: red;">
+            <table border="1" bgcolor="aqua" width="100%">
+                <tr >
+                    <td id="menu" width="24%" style="vertical-align: top;" height="100%">
+                        <ul style="cursor: pointer" class="noListStyle">
+                            <li>
+                                <span class="closed"></span>Page 1
+                                <ul class="noListStyle">
+                                    <li><span class="closed"></span>Page 1_1</li>
+                                    <li><span class="closed"></span>
+                                        Page 1_2
+                                        <ul class="noListStyle">
+                                            <li><span class="closed"></span>Page 1_2_1</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="closed"></span>
+                                Page 2
+                                <ul class="noListStyle">
+                                    <li><span class="closed"></span>Page 2_1</li>
+                                </ul>
+                            </li>
+                            <li><span class="closed"></span>Page 3</li>
+                            <li><span class="closed"></span>Page 4</li>
+                            <li><span class="closed"></span>Page 5</li>
+                        </ul>
+                    </td>
+                    <td id="profile" width="80%">
+                        <table border="0" id="profileHeader" class="profile" bgcolor="#7fffd4">
+                            <tr>
+                                <td id="photo" rowspan="2"><img src="images/22.jpg" width="120" height="120"></td>
+                                <td style="padding-left: 125px"><h1>Name</h1></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><h1>Price</h1></td>
+                            </tr>
+
+                        </table>
+                        <table border="0" id="profileTabs" bgcolor="#f0ffff">
+                            <tr>
+                                <td id="tab1"><a href="#"><img src="images/tab1Closed.png" id="tab1Image" width="90" height="40" onclick="tab1()"></a></td>
+                                <td id="tab2"><a href="#"><img src="images/tab2Closed.png" id="tab2Image" width="90" height="40" onclick="tab2()"></a></td>
+                                <td id="tab3"><a href="#"><img src="images/tab3Closed.png" id="tab3Image" width="90" height="40" onclick="tab3()"></a></td>
+                            </tr>
+                        </table>
+                        <div style="border: dashed; height: 100%">
+                            <h1 id="tabText">Random text</h1>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <br>
+        <div style="display: table-cell">
+            <input type="text" placeholder="Input text here">
+        </div>
+        <div style="display: table-cell; padding-left: 20px">
+            <a href="#" title="Hello there!"> Click me </a>
+        </div>
+        <div style="display: table-cell; padding-left: 20px">
+            <form id="sendForm">
+                <input type="submit" value="Send some data">
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <div style="margin-left: 150px" id="clickDiv">
+
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+        $('ul li').click(function(e) {
+            $(this).find('ul:first').slideToggle();
+
+            if ($(this).children('span').hasClass("closed")){
+                console.log('class closed');
+                $(this).children('span').removeClass("closed").addClass("opened");
+            }else
+            if ($(this).children('span').hasClass("opened")){
+                console.log("class opened");
+                $(this).children('span').removeClass("opened").addClass("closed");
+            }
+            e.stopPropagation();
+        });
+</script>
+
+</html>

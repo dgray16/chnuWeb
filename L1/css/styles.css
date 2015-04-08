@@ -1,0 +1,36 @@
+#search{
+    vertical-align: top;
+}
+#profile{
+    position: relative;
+}
+.closed{
+    width: 15px;
+    height: 15px;
+    padding-left: 10px;
+    background-image: url("../images/triangleClosed.jpg");
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+}
+.opened{
+    width: 15px;
+    height: 15px;
+    padding-left: 10px;
+    background-image: url("../images/triangleOpened.jpg");
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+}
+.noListStyle{
+    list-style: none;
+}
+.btn{
+    width: 40px;
+    height: 35px;
+    background: url("../images/magnifying-glass1.png") no-repeat;
+}
+ul li ul{
+    display: none;
+}
+
